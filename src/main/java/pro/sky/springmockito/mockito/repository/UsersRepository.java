@@ -7,5 +7,4 @@ import pro.sky.springmockito.mockito.model.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
-
 }

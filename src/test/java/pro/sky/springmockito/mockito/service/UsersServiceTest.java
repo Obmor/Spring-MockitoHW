@@ -32,10 +32,10 @@ public class UsersServiceTest {
     @Test
     void testSuccessfulCreateTest() {
 
-        UsersDto dto = new UsersDto(1, "test", "test@mail", "Ivan", "Ivanov");
-        Users newUser = new Users(1, "test", "test@mail", "Ivan", "Ivanov");
-        Users currentUser = new Users(2, "test", "test@mail", "Ivan", "Ivanov");
-        UsersDto currentUserDto = new UsersDto(2, "test", "test@mail", "Ivan", "Ivanov");
+        UsersDto dto = new UsersDto(1, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
+        Users newUser = new Users(1, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
+        Users currentUser = new Users(2, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
+        UsersDto currentUserDto = new UsersDto(2, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
 
         when(usersMapper.toUsers(dto)).thenReturn(newUser);
         when(usersRepository.save(newUser)).thenReturn(currentUser);
@@ -51,8 +51,8 @@ public class UsersServiceTest {
     @Test
     void testGetUserById() {
 
-        Users testUser = new Users(1, "test", "test@mail", "Ivan", "Ivanov");
-        UsersDto currentUserDto = new UsersDto(2, "test", "test@mail", "Ivan", "Ivanov");
+        Users testUser = new Users(1, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
+        UsersDto currentUserDto = new UsersDto(2, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
 
         when(usersRepository.findById(1L)).thenReturn(Optional.of(testUser));
         when(usersMapper.toDto(testUser)).thenReturn(currentUserDto);

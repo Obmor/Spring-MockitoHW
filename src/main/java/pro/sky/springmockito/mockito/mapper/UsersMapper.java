@@ -12,23 +12,4 @@ public interface UsersMapper {
     Users toUsers(UsersDto dto);
 
     UsersDto toDto(Users users);
-
-//    public Users toUsers(UsersDto dto) {
-//        return Users.builder()
-//                .email(dto.getEmail())
-//                .userName(dto.getUserName())
-//                .firstName(dto.getFirstName())
-//                .lastName(dto.getLastName())
-//                .build();
-//    }
-//
-//    public UsersDto toDto(Users users) {
-//        return UsersDto.builder()
-//                .id(users.getId())
-//                .email(users.getEmail())
-//                .userName(users.getUserName())
-//                .firstName(users.getFirstName())
-//                .lastName(users.getLastName())
-//                .build();
-//    }
 }

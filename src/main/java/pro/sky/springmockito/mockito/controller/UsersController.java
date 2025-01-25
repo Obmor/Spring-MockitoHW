@@ -4,7 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pro.sky.springmockito.mockito.dto.UsersDto;
+import pro.sky.springmockito.mockito.model.Users;
 import pro.sky.springmockito.mockito.service.UsersService;
+
+import java.util.Collection;
 
 @RestController
 
@@ -25,5 +28,10 @@ public class UsersController {
     @GetMapping("/{id}")
     public ResponseEntity<UsersDto> getById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(usersService.getById(id));
+    }
+
+    @GetMapping
+    public Collection<Users> findAll() {
+        return (Collection<Users>) usersService.findAll();
     }
 }

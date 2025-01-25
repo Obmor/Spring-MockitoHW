@@ -26,7 +26,7 @@ public class UserControllerTest {
 
     @Test
     void testSuccessfulGetById() {
-        UsersDto dto = new UsersDto(1, "test", "test@mail", "Ivan", "Ivanov");
+        UsersDto dto = new UsersDto(1, "test", "test@mail", "Ivan", "Ivanov", 123, 10_000);
 
         when(usersService.getById(1L)).thenReturn(dto);
 
